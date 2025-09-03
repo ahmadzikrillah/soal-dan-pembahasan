@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembahasan OMI Fisika 2025 MTs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1e5631;
+            --secondary: #4c9a2a;
+            --accent: #76c442;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+            --white: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            background-color: #f5f7fa;
+            line-height: 1.6;
+            padding-top: 80px;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 15px 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            font-size: 1.8rem;
+            color: var(--accent);
+        }
+
+        /* Navigation */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+
+        /* Main Content */
+        .main-content {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 30px;
+            box-shadow: 0 4px 15px var(--shadow);
+        }
+
+        .page-title {
+            color: var(--primary);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .page-title i {
+            color: var(--accent);
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: rgba(76, 154, 42, 0.1);
+            border-left: 4px solid var(--secondary);
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        /* Topic Styles */
+        .topic {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .topic:last-child {
+            border-bottom: none;
+        }
+
+        .topic-title {
+            color: var(--primary);
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .topic-title i {
+            color: var(--secondary);
+        }
+
+        .question {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding: 12px;
+            background-color: #f8f9fa;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
+        }
+
+        .answer {
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .step {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .step-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .step ol {
+            padding-left: 20px;
+        }
+
+        .step li {
+            margin-bottom: 8px;
+        }
+
+        /* Tips Box */
+        .tips {
+            background-color: rgba(76, 154, 42, 0.1);
+            padding: 15px;
+            border-left: 5px solid var(--secondary);
+            margin: 20px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .tips i {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            margin-top: 2px;
+        }
+
+        /* SVG Styles */
+        .svg-container {
+            background-color: var(--white);
+            border: 1px solid #eaeaea;
+            border-radius: var(--radius);
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px var(--shadow);
+        }
+
+        svg {
+            background-color: var(--white);
+            border: 1px solid #ddd;
+            border-radius: var(--radius);
+            margin: 10px 0;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            background-color: var(--white);
+            border-radius: var(--radius);
+            padding: 25px;
+            box-shadow: 0 4px 15px var(--shadow);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .sidebar-title {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-title i {
+            color: var(--secondary);
+        }
+
+        .topic-list {
+            list-style: none;
+        }
+
+        .topic-list li {
+            margin-bottom: 8px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .topic-list li:last-child {
+            border-bottom: none;
+        }
+
+        .topic-list a {
+            color: var(--dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 10px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+        }
+
+        .topic-list a:hover {
+            background-color: rgba(76, 154, 42, 0.1);
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .topic-list a i {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Formula Box */
+        .formula-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: var(--radius);
+            margin: 15px 0;
+            border-left: 3px solid var(--accent);
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                position: static;
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .topic-title {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .main-content {
+                padding: 20px;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+            }
+            
+            .sidebar {
+                padding: 20px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                padding-top: 0;
+                background-color: white;
+            }
+            
+            .header {
+                position: static;
+            }
+            
+            .sidebar {
+                display: none;
+            }
+            
+            .container {
+                grid-template-columns: 1fr;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .main-content {
+                box-shadow: none;
+                border-radius: 0;
+                padding: 20px;
+            }
+        }
+		
+		/* Header Actions */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.back-btn {
+    background-color: var(--accent);
+    color: var(--white);
+    padding: 8px 15px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: var(--transition);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-btn:hover {
+    background-color: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.back-btn i {
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .back-btn span {
+        display: none;
+    }
+    
+    .back-btn {
+        padding: 8px 10px;
+    }
+    
+    .back-btn i {
+        font-size: 1rem;
+    }
+}
+    </style>
+</head>
+<body>    
+	
+  <!-- Header -->
+<header class="header">
+    <div class="header-container">
+        <div class="logo">
+            <i class="fas fa-atom"></i>
+            <span>OMI Fisika 2025 MTs</span>
+        </div>
+        <div class="header-actions">
+            <a href="soal.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span>Kembali ke Soal</span>
+            </a>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Main Content -->
+        <main class="main-content">
+            <h1 class="page-title">
+                <i class="fas fa-book-open"></i>
+                Pembahasan OMI Fisika 2025 MTs
+            </h1>
+            
+            <div class="intro">
+                <p>Bab berikut menguraikan <strong>langkah demi langkah</strong> cara menyelesaikan soal Olimpiade Madrasah (OMI) bidang Fisika tingkat MTs. Setiap topik dilengkapi ilustrasi SVG sederhana agar proses terlihat jelas.</p>
+            </div>
+
+            <!-- Topic 1 -->
+            <div class="topic" id="topic1">
+                <h2 class="topic-title">
+                    <i class="fas fa-circle-notch"></i>
+                    1. Gerak Melingkar Beraturan (GMB) - Soal 1
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Percepatan sentripetal bergantung pada ... jika v konstan.<br>
+                    <strong>Ditanyakan:</strong> Faktor yang mempengaruhi percepatan sentripetal?
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> C. jari-jari (r)
+                </div>
+                
+                <div class="step">
+                    <div class="step-title">Langkah penyelesaian:</div>
+                    <ol>
+                        <li>Rumus percepatan sentripetal: <code>a<sub>s</sub> = v² / r</code></li>
+                        <li>Dari rumus tersebut, jika kecepatan (v) tetap konstan, maka percepatan sentripetal berbanding terbalik dengan jari-jari (r): <code>a<sub>s</sub> ∝ 1/r</code></li>
+                        <li>Kesimpulan: semakin kecil jari-jari (r), semakin besar percepatan sentripetal (a<sub>s</sub>).</li>
+                    </ol>
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="320" height="200" viewBox="0 0 320 200">
+                        <!-- Lingkaran -->
+                        <circle cx="160" cy="100" r="60" fill="none" stroke="#004d00" stroke-width="2"/>
+                        
+                        <!-- Pusat lingkaran -->
+                        <circle cx="160" cy="100" r="3" fill="#004d00"/>
+                        <text x="160" y="120" font-size="12" text-anchor="middle" fill="#004d00">Pusat</text>
+                        
+                        <!-- Vektor kecepatan -->
+                        <path d="M160 100 L220 100" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="190" y="95" font-size="12" fill="#e00">v</text>
+                        
+                        <!-- Vektor percepatan sentripetal -->
+                        <path d="M220 100 L160 100" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow2)"/>
+                        <text x="190" y="115" font-size="12" fill="#0066cc">a<sub>s</sub></text>
+                        
+                        <!-- Jari-jari -->
+                        <line x1="160" y1="100" x2="220" y2="100" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="190" y="85" font-size="11" fill="#666">r</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#e00"/></marker>
+                            <marker id="arrow2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0066cc"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+                
+                <div class="tips">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>Tips:</strong> Percepatan sentripetal selalu menuju pusat lingkaran.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Topic 2 -->
+            <div class="topic" id="topic2">
+                <h2 class="topic-title">
+                    <i class="fas fa-wave-square"></i>
+                    2. Gelombang Bunyi - Soal 2
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> f = 1 kHz, v = 340 m/s<br>
+                    <strong>Ditanyakan:</strong> λ = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 0,34 m
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus dasar gelombang: <code>v = f · λ</code></li>
+                        <li>Dari rumus tersebut, kita peroleh: <code>λ = v / f</code></li>
+                        <li>Substitusi nilai: <code>λ = 340 / 1.000</code></li>
+                        <li>Hasil perhitungan: <code>λ = 0,34 m</code></li>
+                        <li>Konversi satuan: 0,34 m = 34 cm.</li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    v = f · λ<br>
+                    λ = v / f<br>
+                    λ = 340 / 1000 = 0,34 m
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="400" height="150" viewBox="0 0 400 150">
+                        <!-- Gelombang sinusoidal -->
+                        <path d="M20 75 Q50 25 80 75 T140 75 T200 75 T260 75 T320 75 T380 75" fill="none" stroke="#004d00" stroke-width="2"/>
+                        
+                        <!-- Panjang gelombang -->
+                        <line x1="20" y1="110" x2="140" y2="110" stroke="#e00" stroke-width="2" marker-start="url(#start)" marker-end="url(#end)"/>
+                        <text x="80" y="125" font-size="12" text-anchor="middle" fill="#e00">λ = 0,34 m</text>
+                        
+                        <!-- Garis vertikal untuk menandai awal dan akhir gelombang -->
+                        <line x1="20" y1="70" x2="20" y2="80" stroke="#666" stroke-width="1"/>
+                        <line x1="140" y1="70" x2="140" y2="80" stroke="#666" stroke-width="1"/>
+                        
+                        <!-- Frekuensi -->
+                        <text x="30" y="55" font-size="11" fill="#0066cc">f = 1 kHz</text>
+                        
+                        <defs>
+                            <marker id="start" markerWidth="5" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M5 0 L5 5 L0 2.5 Z" fill="#e00"/></marker>
+                            <marker id="end" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 Z" fill="#e00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 3 -->
+            <div class="topic" id="topic3">
+                <h2 class="topic-title">
+                    <i class="fas fa-water"></i>
+                    3. Tekanan Hidrostatis - Soal 3
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> h = 4 m, ρ = 1000 kg/m³, g = 10 N/kg<br>
+                    <strong>Ditanyakan:</strong> P = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 40 kPa
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus tekanan hidrostatis: <code>P = ρ · g · h</code></li>
+                        <li>Substitusi nilai: <code>P = 1000 × 10 × 4</code></li>
+                        <li>Hasil perhitungan: <code>P = 40.000 Pa</code></li>
+                        <li>Konversi satuan: 40.000 Pa = 40 kPa.</li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    P = ρ · g · h<br>
+                    P = 1000 × 10 × 4 = 40.000 Pa = 40 kPa
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="250" height="220" viewBox="0 0 250 220">
+                        <!-- Bejana air -->
+                        <rect x="50" y="40" width="100" height="140" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        
+                        <!-- Air dalam bejana -->
+                        <rect x="50" y="80" width="100" height="100" fill="#99ccff" stroke="#004d00" stroke-width="1"/>
+                        
+                        <!-- Permukaan air -->
+                        <line x1="50" y1="80" x2="150" y2="80" stroke="#004d00" stroke-width="2"/>
+                        
+                        <!-- Ketinggian air -->
+                        <line x1="170" y1="80" x2="170" y2="180" stroke="#e00" stroke-width="2" marker-start="url(#start)" marker-end="url(#end)"/>
+                        <text x="180" y="135" font-size="12" fill="#e00">h = 4 m</text>
+                        
+                        <!-- Titik tekanan -->
+                        <circle cx="100" cy="180" r="5" fill="#e00"/>
+                        <path d="M100 180 L120 160 L120 200 Z" fill="#e00"/>
+                        <text x="130" y="185" font-size="11" fill="#e00">P</text>
+                        
+                        <!-- Massa jenis air -->
+                        <text x="100" y="65" font-size="11" text-anchor="middle" fill="#004d00">ρ = 1000 kg/m³</text>
+                        
+                        <defs>
+                            <marker id="start" markerWidth="5" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M5 0 L5 5 L0 2.5 Z" fill="#e00"/></marker>
+                            <marker id="end" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 Z" fill="#e00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 4 -->
+            <div class="topic" id="topic4">
+                <h2 class="topic-title">
+                    <i class="fas fa-bolt"></i>
+                    4. Transformator - Soal 4
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Step-up, V<sub>p</sub> = 100 V, N<sub>p</sub> = 100, N<sub>s</sub> = 500<br>
+                    <strong>Ditanyakan:</strong> V<sub>s</sub> = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> B. 500 V
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus transformator: <code>V<sub>s</sub>/V<sub>p</sub> = N<sub>s</sub>/N<sub>p</sub></code></li>
+                        <li>Dari rumus tersebut, kita peroleh: <code>V<sub>s</sub> = V<sub>p</sub> × (N<sub>s</sub>/N<sub>p</sub>)</code></li>
+                        <li>Substitusi nilai: <code>V<sub>s</sub> = 100 V × (500 / 100)</code></li>
+                        <li>Hasil perhitungan: <code>V<sub>s</sub> = 100 V × 5 = 500 V</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    V<sub>s</sub>/V<sub>p</sub> = N<sub>s</sub>/N<sub>p</sub><br>
+                    V<sub>s</sub> = V<sub>p</sub> × (N<sub>s</sub>/N<sub>p</sub>)<br>
+                    V<sub>s</sub> = 100 V × (500 / 100) = 100 V × 5 = 500 V
+                </div>
+                
+              
+            </div>
+
+            <!-- Topic 5 -->
+            <div class="topic" id="topic5">
+                <h2 class="topic-title">
+                    <i class="fas fa-compress-arrows-alt"></i>
+                    5. Energi Potensial Pegas - Soal 6
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> k = 400 N/m, x = 0,05 m<br>
+                    <strong>Ditanyakan:</strong> E<sub>p</sub> = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 0,5 J
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus energi potensial pegas: <code>E<sub>p</sub> = ½ k x²</code></li>
+                        <li>Substitusi nilai: <code>E<sub>p</sub> = ½ × 400 × (0,05)²</code></li>
+                        <li>Hitung kuadrat terlebih dahulu: <code>(0,05)² = 0,0025</code></li>
+                        <li>Lanjutkan perhitungan: <code>E<sub>p</sub> = ½ × 400 × 0,0025</code></li>
+                        <li>Hasil perhitungan: <code>E<sub>p</sub> = 200 × 0,0025 = 0,5 J</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    E<sub>p</sub> = ½ k x²<br>
+                    E<sub>p</sub> = ½ × 400 × (0,05)²<br>
+                    E<sub>p</sub> = ½ × 400 × 0,0025<br>
+                    E<sub>p</sub> = 200 × 0,0025 = 0,5 J
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="160" viewBox="0 0 300 160">
+                        <!-- Dinding -->
+                        <rect x="30" y="40" width="10" height="80" fill="#999" stroke="#333"/>
+                        
+                        <!-- Pegas dalam keadaan setimbang -->
+                        <path d="M40 80 L80 80" stroke="#666" stroke-width="8"/>
+                        
+                        <!-- Pegas dalam keadaan meregang -->
+                        <path d="M40 80 L120 80 L130 70 L140 90 L150 70 L160 90 L170 70 L180 90 L190 70 L200 90 L210 70 L220 90 L230 80" stroke="#004d00" stroke-width="3" fill="none"/>
+                        
+                        <!-- Benda -->
+                        <rect x="230" y="70" width="30" height="20" fill="#ff9999" stroke="#333"/>
+                        <text x="245" y="85" font-size="10" text-anchor="middle">m</text>
+                        
+                        <!-- Gaya -->
+                        <path d="M245 70 L245 50" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="255" y="65" font-size="11" fill="#e00">F</text>
+                        
+                        <!-- Simpangan -->
+                        <line x1="80" y1="100" x2="230" y2="100" stroke="#0066cc" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="155" y="115" font-size="11" text-anchor="middle" fill="#0066cc">x = 0,05 m</text>
+                        
+                        <!-- Konstanta pegas -->
+                        <text x="130" y="55" font-size="11" text-anchor="middle" fill="#004d00">k = 400 N/m</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#e00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 6 -->
+            <div class="topic" id="topic6">
+                <h2 class="topic-title">
+                    <i class="fas fa-plug"></i>
+                    6. Hukum Ohm
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Hubungan antara tegangan, arus, dan hambatan<br>
+                    <strong>Ditanyakan:</strong> Rumus Hukum Ohm yang menyatakan V = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> B. IR
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Hukum Ohm menyatakan bahwa tegangan (V) sebanding dengan arus (I) pada suhu tetap.</li>
+                        <li>Hubungan ini dirumuskan sebagai: <code>V = I × R</code></li>
+                        <li>Dalam satuan: volt (V) = ampere (A) × ohm (Ω).</li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    V = I × R
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="180" viewBox="0 0 300 180">
+                        <!-- Baterai -->
+                        <rect x="40" y="70" width="20" height="40" fill="#ffe7cc" stroke="#333" stroke-width="2"/>
+                        <line x1="45" y1="70" x2="45" y2="60" stroke="#333" stroke-width="2"/>
+                        <line x1="55" y1="70" x2="55" y2="80" stroke="#333" stroke-width="2"/>
+                        <text x="50" y="55" font-size="10" text-anchor="middle">+</text>
+                        <text x="50" y="130" font-size="10" text-anchor="middle">-</text>
+                        
+                        <!-- Resistor -->
+                        <rect x="140" y="80" width="60" height="20" fill="#ffe7cc" stroke="#d00" stroke-width="2"/>
+                        <text x="170" y="95" font-size="12" text-anchor="middle">R</text>
+                        
+                        <!-- Kabel -->
+                        <path d="M60 90 L140 90 M200 90 L260 90" stroke="#000" stroke-width="2"/>
+                        
+                        <!-- Arus -->
+                        <path d="M100 90 L120 90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="110" y="85" font-size="11" text-anchor="middle" fill="#0066cc">I</text>
+                        
+                        <!-- Tegangan -->
+                        <text x="50" y="150" font-size="11" text-anchor="middle">V</text>
+                        
+                        <!-- Hambatan -->
+                        <text x="170" y="115" font-size="10" text-anchor="middle">R = 10 Ω</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0066cc"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 7 -->
+            <div class="topic" id="topic7">
+                <h2 class="topic-title">
+                    <i class="fas fa-music"></i>
+                    7. Resonansi Kolom Udara Tertutup
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Kolom tertutup L = 0,5 m, v = 340 m/s<br>
+                    <strong>Ditanyakan:</strong> f₀ = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> C. 170 Hz
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Pada kolom udara tertutup, panjang gelombang dasar: <code>λ = 4L</code></li>
+                        <li>Substitusi nilai: <code>λ = 4 × 0,5 = 2 m</code></li>
+                        <li>Rumus frekuensi: <code>f = v/λ</code></li>
+                        <li>Substitusi nilai: <code>f = 340 / 2</code></li>
+                        <li>Hasil perhitungan: <code>f = 170 Hz</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    λ = 4L<br>
+                    λ = 4 × 0,5 = 2 m<br>
+                    f = v/λ<br>
+                    f = 340 / 2 = 170 Hz
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="180" viewBox="0 0 300 180">
+                        <!-- Kolom udara tertutup -->
+                        <rect x="60" y="40" width="40" height="100" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        
+                        <!-- Tutup kolom -->
+                        <rect x="50" y="40" width="60" height="10" fill="#999" stroke="#333"/>
+                        
+                        <!-- Dasar kolom -->
+                        <rect x="50" y="130" width="60" height="10" fill="#999" stroke="#333"/>
+                        
+                        <!-- Gelombang standing -->
+                        <path d="M60 90 Q70 60 80 90 T100 90 T120 90 T140 90 T160 90 T180 90 T200 90" fill="none" stroke="#e00" stroke-width="2"/>
+                        
+                        <!-- Simpul dan perut -->
+                        <circle cx="60" cy="90" r="3" fill="#004d00"/>
+                        <circle cx="100" cy="90" r="3" fill="#004d00"/>
+                        <circle cx="140" cy="90" r="3" fill="#004d00"/>
+                        <circle cx="180" cy="90" r="3" fill="#004d00"/>
+                        
+                        <circle cx="80" cy="60" r="3" fill="#e00"/>
+                        <circle cx="120" cy="60" r="3" fill="#e00"/>
+                        <circle cx="160" cy="60" r="3" fill="#e00"/>
+                        
+                        <!-- Label panjang kolom -->
+                        <line x1="80" y1="150" x2="80" y2="50" stroke="#0066cc" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="90" y="105" font-size="11" fill="#0066cc">L = 0,5 m</text>
+                        
+                        <!-- Label gelombang -->
+                        <text x="130" y="45" font-size="11" text-anchor="middle" fill="#e00">λ = 4L = 2 m</text>
+                        
+                        <!-- Sumber bunyi -->
+                        <circle cx="30" cy="90" r="10" fill="#ffcc99" stroke="#333"/>
+                        <text x="30" y="95" font-size="10" text-anchor="middle">Sumber</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 8 -->
+            <div class="topic" id="topic8">
+                <h2 class="topic-title">
+                    <i class="fas fa-eye"></i>
+                    8. Lensa Cembung - Pembesaran Nyata
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> f = 20 cm, bayangan nyata 2×<br>
+                    <strong>Ditanyakan:</strong> s = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> C. 60 cm
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Pembesaran linear: <code>M = s'/s = 2</code></li>
+                        <li>Dari rumus tersebut, kita peroleh: <code>s' = 2s</code></li>
+                        <li>Persamaan lensa: <code>1/f = 1/s + 1/s'</code></li>
+                        <li>Substitusi nilai s': <code>1/20 = 1/s + 1/(2s)</code></li>
+                        <li>Sederhanakan: <code>1/20 = 3/(2s)</code></li>
+                        <li>Dari persamaan tersebut, kita peroleh: <code>s = (3 × 20)/2</code></li>
+                        <li>Hasil perhitungan: <code>s = 30 cm</code></li>
+                        <li>Maka: <code>s' = 2 × 30 = 60 cm</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    M = s'/s = 2 → s' = 2s<br>
+                    1/f = 1/s + 1/s'<br>
+                    1/20 = 1/s + 1/(2s) = 3/(2s)<br>
+                    s = (3 × 20)/2 = 30 cm<br>
+                    s' = 2 × 30 = 60 cm
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="350" height="200" viewBox="0 0 350 200">
+                        <!-- Lensa cembung -->
+                        <path d="M150 60 Q130 80 130 100 Q130 120 150 140 Q170 120 170 100 Q170 80 150 60" fill="none" stroke="#004d00" stroke-width="2"/>
+                        
+                        <!-- Sumbu utama -->
+                        <line x1="50" y1="100" x2="250" y2="100" stroke="#666" stroke-width="1"/>
+                        
+                        <!-- Titik fokus -->
+                        <circle cx="130" cy="100" r="3" fill="#e00"/>
+                        <text x="130" y="120" font-size="10" text-anchor="middle">F</text>
+                        
+                        <circle cx="170" cy="100" r="3" fill="#e00"/>
+                        <text x="170" y="120" font-size="10" text-anchor="middle">F'</text>
+                        
+                        <!-- Obyek -->
+                        <line x1="80" y1="100" x2="80" y2="70" stroke="#333" stroke-width="2"/>
+                        <circle cx="80" cy="70" r="5" fill="#ffcc99"/>
+                        <text x="80" y="65" font-size="10" text-anchor="middle">Obyek</text>
+                        
+                        <!-- Bayangan -->
+                        <line x1="220" y1="100" x2="220" y2="130" stroke="#333" stroke-width="2"/>
+                        <circle cx="220" cy="130" r="5" fill="#99ccff"/>
+                        <text x="220" y="145" font-size="10" text-anchor="middle">Bayangan</text>
+                        
+                        <!-- Sinar 1: sejajar sumbu utama -->
+                        <path d="M80 70 L150 70 L220 130" stroke="#e00" stroke-width="1.5"/>
+                        
+                        <!-- Sinar 2: melalui titik fokus -->
+                        <path d="M80 70 L130 100 L220 130" stroke="#0066cc" stroke-width="1.5"/>
+                        
+                        <!-- Jarak obyek -->
+                        <line x1="80" y1="110" x2="130" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="105" y="125" font-size="10" text-anchor="middle" fill="#666">s</text>
+                        
+                        <!-- Jarak bayangan -->
+                        <line x1="170" y1="110" x2="220" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="195" y="125" font-size="10" text-anchor="middle" fill="#666">s'</text>
+                        
+                        <!-- Jarak fokus -->
+                        <text x="150" y="160" font-size="11" text-anchor="middle" fill="#e00">f = 20 cm</text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 9 -->
+            <div class="topic" id="topic9">
+                <h2 class="topic-title">
+                    <i class="fas fa-bolt"></i>
+                    9. Arus dari Daya
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Lampu 60 W, 220 V<br>
+                    <strong>Ditanyakan:</strong> I = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 0,27 A
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus daya listrik: <code>P = V × I</code></li>
+                        <li>Dari rumus tersebut, kita peroleh: <code>I = P/V</code></li>
+                        <li>Substitusi nilai: <code>I = 60 / 220</code></li>
+                        <li>Hasil perhitungan: <code>I ≈ 0,273 A</code></li>
+                        <li>Pembulatan: <code>I ≈ 0,27 A</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    P = V × I<br>
+                    I = P/V<br>
+                    I = 60 / 220 ≈ 0,273 A ≈ 0,27 A
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="280" height="180" viewBox="0 0 280 180">
+                        <!-- Stop kontak -->
+                        <rect x="40" y="80" width="30" height="40" fill="#e6e6e6" stroke="#333" stroke-width="2"/>
+                        <line x1="55" y1="80" x2="55" y2="70" stroke="#333" stroke-width="2"/>
+                        <line x1="55" y1="120" x2="55" y2="130" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- Kabel -->
+                        <path d="M70 100 L120 100" stroke="#000" stroke-width="2"/>
+                        
+                        <!-- Lampu -->
+                        <circle cx="150" cy="100" r="25" fill="#ffffcc" stroke="#333" stroke-width="2"/>
+                        <path d="M140 100 L160 100 M150 90 L150 110" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Cahaya lampu -->
+                        <path d="M150 75 L140 65 M150 75 L160 65 M150 75 L150 60" stroke="#ffcc00" stroke-width="1"/>
+                        
+                        <!-- Label daya -->
+                        <text x="150" y="140" font-size="12" text-anchor="middle">P = 60 W</text>
+                        
+                        <!-- Label tegangan -->
+                        <text x="55" y="155" font-size="11" text-anchor="middle">V = 220 V</text>
+                        
+                        <!-- Arus -->
+                        <path d="M95 100 L115 100" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="105" y="95" font-size="11" text-anchor="middle" fill="#0066cc">I = ?</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0066cc"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 10 -->
+            <div class="topic" id="topic10">
+                <h2 class="topic-title">
+                    <i class="fas fa-moon"></i>
+                    10. Gravitasi Bulan
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Berat di bumi 600 N<br>
+                    <strong>Ditanyakan:</strong> Berat di bulan = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 100 N
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Percepatan gravitasi di bulan: <code>g<sub>moon</sub> = 1/6 g<sub>earth</sub></code></li>
+                        <li>Berat benda: <code>W = m × g</code></li>
+                        <li>Massa benda tetap sama di bumi dan bulan, sehingga: <code>W<sub>moon</sub> = m × g<sub>moon</sub> = m × (1/6 g<sub>earth</sub>) = 1/6 × (m × g<sub>earth</sub>) = 1/6 × W<sub>earth</sub></code></li>
+                        <li>Substitusi nilai: <code>W<sub>moon</sub> = 1/6 × 600 N</code></li>
+                        <li>Hasil perhitungan: <code>W<sub>moon</sub> = 100 N</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    g<sub>moon</sub> = 1/6 g<sub>earth</sub><br>
+                    W<sub>moon</sub> = 1/6 × W<sub>earth</sub><br>
+                    W<sub>moon</sub> = 1/6 × 600 N = 100 N
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="200" viewBox="0 0 300 200">
+                        <!-- Bumi -->
+                        <circle cx="80" cy="100" r="50" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        <text x="80" y="105" font-size="12" text-anchor="middle">Bumi</text>
+                        
+                        <!-- Bulan -->
+                        <circle cx="220" cy="100" r="30" fill="#ffffcc" stroke="#d00" stroke-width="2"/>
+                        <text x="220" y="105" font-size="12" text-anchor="middle">Bulan</text>
+                        
+                        <!-- Benda di bumi -->
+                        <circle cx="80" cy="50" r="8" fill="#ff9999" stroke="#333"/>
+                        <path d="M80 58 L80 70" stroke="#333" stroke-width="1"/>
+                        <text x="80" y="40" font-size="10" text-anchor="middle">m</text>
+                        
+                        <!-- Benda di bulan -->
+                        <circle cx="220" cy="70" r="8" fill="#ff9999" stroke="#333"/>
+                        <path d="M220 78 L220 90" stroke="#333" stroke-width="1"/>
+                        <text x="220" y="60" font-size="10" text-anchor="middle">m</text>
+                        
+                        <!-- Gaya gravitasi bumi -->
+                        <path d="M80 58 L80 45" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="65" y="50" font-size="10" text-anchor="end" fill="#e00">W<sub>earth</sub> = 600 N</text>
+                        
+                        <!-- Gaya gravitasi bulan -->
+                        <path d="M220 78 L220 65" stroke="#d00" stroke-width="2" marker-end="url(#arrow2)"/>
+                        <text x="235" y="70" font-size="10" text-anchor="start" fill="#d00">W<sub>moon</sub> = 100 N</text>
+                        
+                        <!-- Perbandingan gravitasi -->
+                        <text x="150" y="170" font-size="11" text-anchor="middle" fill="#004d00">g<sub>moon</sub> = 1/6 g<sub>earth</sub></text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#e00"/></marker>
+                            <marker id="arrow2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#d00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 11 -->
+            <div class="topic" id="topic11">
+                <h2 class="topic-title">
+                    <i class="fas fa-arrow-up"></i>
+                    11. Gerak Vertikal ke Atas
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> v₀ = 20 m/s, g = 10 m/s²<br>
+                    <strong>Ditanyakan:</strong> h<sub>max</sub> = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 20 m
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Pada ketinggian maksimum, kecepatan akhir: <code>v<sub>t</sub> = 0</code></li>
+                        <li>Persamaan gerak vertikal: <code>v<sub>t</sub>² = v₀² - 2gh</code></li>
+                        <li>Substitusi nilai: <code>0 = 20² - 2·10·h</code></li>
+                        <li>Hitung: <code>0 = 400 - 20h</code></li>
+                        <li>Dari persamaan tersebut, kita peroleh: <code>20h = 400</code></li>
+                        <li>Hasil perhitungan: <code>h = 400 / 20 = 20 m</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    v<sub>t</sub>² = v₀² - 2gh<br>
+                    0 = 20² - 2·10·h<br>
+                    0 = 400 - 20h<br>
+                    20h = 400<br>
+                    h = 400 / 20 = 20 m
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="220" viewBox="0 0 300 220">
+                        <!-- Tanah -->
+                        <rect x="0" y="180" width="300" height="40" fill="#d2b48c" stroke="#8b4513"/>
+                        
+                        <!-- Lintasan gerak -->
+                        <path d="M150 180 Q150 100 150 40" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                        
+                        <!-- Posisi awal -->
+                        <circle cx="150" cy="180" r="5" fill="#0066cc"/>
+                        <text x="150" y="200" font-size="10" text-anchor="middle">Awal</text>
+                        
+                        <!-- Posisi akhir -->
+                        <circle cx="150" cy="40" r="5" fill="#e00"/>
+                        <text x="150" y="30" font-size="10" text-anchor="middle">h<sub>max</sub></text>
+                        
+                        <!-- Benda -->
+                        <circle cx="150" cy="110" r="8" fill="#ff9999" stroke="#333"/>
+                        
+                        <!-- Kecepatan awal -->
+                        <path d="M150 102 L150 85" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="165" y="95" font-size="11" fill="#0066cc">v₀ = 20 m/s</text>
+                        
+                        <!-- Percepatan gravitasi -->
+                        <path d="M150 118 L150 135" stroke="#333" stroke-width="2" marker-end="url(#arrow2)"/>
+                        <text x="165" y="125" fill="#333">g = 10 m/s²</text>
+                        
+                        <!-- Ketinggian maksimum -->
+                        <line x1="170" y1="40" x2="170" y2="180" stroke="#e00" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="185" y="115" font-size="11" fill="#e00">h = 20 m</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0066cc"/></marker>
+                            <marker id="arrow2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#333"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 12 -->
+            <div class="topic" id="topic12">
+                <h2 class="topic-title">
+                    <i class="fas fa-magnet"></i>
+                    12. Gaya Lorentz
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> I = 2 A, L = 0,3 m, B = 0,5 T tegak lurus<br>
+                    <strong>Ditanyakan:</strong> F = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 0,3 N
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus gaya Lorentz: <code>F = B I L sin θ</code></li>
+                        <li>Karena arus dan medan magnet tegak lurus, maka <code>θ = 90°</code> dan <code>sin 90° = 1</code></li>
+                        <li>Sehingga rumus menjadi: <code>F = B I L</code></li>
+                        <li>Substitusi nilai: <code>F = 0,5 × 2 × 0,3</code></li>
+                        <li>Hasil perhitungan: <code>F = 0,3 N</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    F = B I L sin θ<br>
+                    F = B I L (karena sin 90° = 1)<br>
+                    F = 0,5 × 2 × 0,3 = 0,3 N
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="180" viewBox="0 0 300 180">
+                        <!-- Kawat berarus -->
+                        <line x1="50" y1="90" x2="250" y2="90" stroke="#0066cc" stroke-width="6"/>
+                        
+                        <!-- Arah arus -->
+                        <path d="M150 90 L180 90" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="165" y="85" font-size="11" text-anchor="middle" fill="#0066cc">I = 2 A</text>
+                        
+                        <!-- Medan magnet (masuk bidang) -->
+                        <g>
+                            <circle cx="150" cy="90" r="40" fill="none" stroke="#d00" stroke-width="1" stroke-dasharray="2,2"/>
+                            <circle cx="150" cy="90" r="3" fill="#d00"/>
+                            <path d="M145 85 L145 95 M155 85 L155 95 M150 80 L150 100" stroke="#d00" stroke-width="1"/>
+                            <text x="150" y="140" font-size="11" text-anchor="middle" fill="#d00">B = 0,5 T (masuk bidang)</text>
+                        </g>
+                        
+                        <!-- Gaya Lorentz -->
+                        <path d="M150 90 L150 60" stroke="#004d00" stroke-width="2" marker-end="url(#arrow2)"/>
+                        <text x="165" y="75" font-size="11" fill="#004d00">F = 0,3 N</text>
+                        
+                        <!-- Panjang kawat -->
+                        <line x1="50" y1="110" x2="250" y2="110" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="150" y="125" font-size="11" text-anchor="middle" fill="#666">L = 0,3 m</text>
+                        
+                        <!-- Sudut 90° -->
+                        <path d="M130 90 L130 70 L150 70" fill="none" stroke="#333" stroke-width="1"/>
+                        <text x="120" y="80" font-size="10" fill="#333">90°</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0066cc"/></marker>
+                            <marker id="arrow2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#004d00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 13 -->
+            <div class="topic" id="topic13">
+                <h2 class="topic-title">
+                    <i class="fas fa-weight-hanging"></i>
+                    13. Konversi Massa Jenis
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> 2 g/cm³<br>
+                    <strong>Ditanyakan:</strong> ... kg/m³
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> B. 2000
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Konversi satuan massa jenis: <code>1 g/cm³ = 1000 kg/m³</code></li>
+                        <li>Untuk mengkonversi 2 g/cm³ ke kg/m³: <code>2 g/cm³ × 1000</code></li>
+                        <li>Hasil perhitungan: <code>2 g/cm³ = 2000 kg/m³</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    1 g/cm³ = 1000 kg/m³<br>
+                    2 g/cm³ × 1000 = 2000 kg/m³
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="180" viewBox="0 0 300 180">
+                        <!-- Kotak 1 g/cm³ -->
+                        <rect x="40" y="60" width="80" height="60" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        <text x="80" y="95" font-size="14" text-anchor="middle">1 g/cm³</text>
+                        
+                        <!-- Panah konversi -->
+                        <path d="M120 90 L180 90" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="150" y="85" font-size="11" text-anchor="middle">× 1000</text>
+                        
+                        <!-- Kotak 1000 kg/m³ -->
+                        <rect x="180" y="60" width="80" height="60" fill="#ffcccc" stroke="#d00" stroke-width="2"/>
+                        <text x="220" y="95" font-size="14" text-anchor="middle">1000 kg/m³</text>
+                        
+                        <!-- Kotak 2 g/cm³ -->
+                        <rect x="40" y="130" width="80" height="40" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        <text x="80" y="155" font-size="14" text-anchor="middle">2 g/cm³</text>
+                        
+                        <!-- Panah konversi -->
+                        <path d="M120 150 L180 150" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <!-- Kotak 2000 kg/m³ -->
+                        <rect x="180" y="130" width="80" height="40" fill="#ffcccc" stroke="#d00" stroke-width="2"/>
+                        <text x="220" y="155" font-size="14" text-anchor="middle">2000 kg/m³</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#666"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 14 -->
+            <div class="topic" id="topic14">
+                <h2 class="topic-title">
+                    <i class="fas fa-hand-rock"></i>
+                    14. Usaha Gaya
+                </h2>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> F = 50 N, s = 4 m searah<br>
+                    <strong>Ditanyakan:</strong> W = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> B. 200 J
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus usaha: <code>W = F · s · cos θ</code></li>
+                        <li>Karena gaya dan perpindahan searah, maka <code>θ = 0°</code> dan <code>cos 0° = 1</code></li>
+                        <li>Sehingga rumus menjadi: <code>W = F · s</code></li>
+                        <li>Substitusi nilai: <code>W = 50 × 4</code></li>
+                        <li>Hasil perhitungan: <code>W = 200 J</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    W = F · s · cos θ<br>
+                    W = F · s (karena cos 0° = 1)<br>
+                    W = 50 × 4 = 200 J
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="180" viewBox="0 0 300 180">
+                        <!-- Permukaan -->
+                        <line x1="30" y1="120" x2="270" y2="120" stroke="#333" stroke-width="2"/>
+                        
+                        <!-- Benda -->
+                        <rect x="60" y="90" width="40" height="30" fill="#ffcc99" stroke="#333"/>
+                        <text x="80" y="110" font-size="12" text-anchor="middle">m</text>
+                        
+                        <!-- Gaya -->
+                        <path d="M80 90 L80 60" stroke="#e00" stroke-width="3" marker-end="url(#arrow)"/>
+                        <text x="95" y="75" font-size="11" fill="#e00">F = 50 N</text>
+                        
+                        <!-- Perpindahan -->
+                        <path d="M100 105 L220 105" stroke="#0066cc" stroke-width="2" marker-end="url(#arrow2)"/>
+                        <text x="160" y="100" font-size="11" text-anchor="middle" fill="#0066cc">s = 4 m</text>
+                        
+                        <!-- Posisi awal -->
+                        <circle cx="80" cy="105" r="3" fill="#0066cc"/>
+                        <text x="80" y="140" font-size="10" text-anchor="middle">Awal</text>
+                        
+                        <!-- Posisi akhir -->
+                        <circle cx="220" cy="105" r="3" fill="#0066cc"/>
+                        <text x="220" y="140" font-size="10" text-anchor="middle">Akhir</text>
+                        
+                        <!-- Sudut 0° -->
+                        <path d="M80 90 L60 90 L60 70" fill="none" stroke="#333" stroke-width="1"/>
+                        <text x="50" y="80" font-size="10" fill="#333">0°</text>
+                        
+                        <!-- Usaha -->
+                        <text x="150" y="160" font-size="12" text-anchor="middle" fill="#004d00">W = F · s = 200 J</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#e00"/></marker>
+                            <marker id="arrow2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0066cc"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Additional Topics 16-25 -->
+            <h2 class="topic-title">
+                <i class="fas fa-list-ol"></i>
+                16 – 25. Pembahasan Lengkap Soal 16 – 25
+            </h2>
+
+            <!-- Topic 16 -->
+            <div class="topic" id="topic16">
+                <h3 class="topic-title">
+                    <i class="fas fa-snowflake"></i>
+                    16. Perubahan Wujud – Sublimasi
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Perubahan wujud zat dari padat ke gas langsung<br>
+                    <strong>Ditanyakan:</strong> Nama perubahan wujud tersebut adalah ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. sublimasi  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Sublimasi adalah perubahan wujud zat dari padat ke gas tanpa melewati fase cair.</li>
+                        <li>Contoh: kapor barus (naftalen), es kering (CO₂ padat).</li>
+                    </ol>
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="180" viewBox="0 0 300 180">
+                        <!-- Padat -->
+                        <rect x="50" y="100" width="60" height="60" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        <text x="80" y="135" font-size="12" text-anchor="middle">Padat</text>
+                        
+                        <!-- Panah sublimasi -->
+                        <path d="M110 130 L190 130" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="150" y="125" font-size="11" text-anchor="middle">Sublimasi</text>
+                        
+                        <!-- Gas -->
+                        <g>
+                            <circle cx="220" cy="110" r="8" fill="#ffcccc" stroke="#333" opacity="0.7"/>
+                            <circle cx="235" cy="120" r="6" fill="#ffcccc" stroke="#333" opacity="0.7"/>
+                            <circle cx="210" cy="125" r="7" fill="#ffcccc" stroke="#333" opacity="0.7"/>
+                            <circle cx="225" cy="135" r="5" fill="#ffcccc" stroke="#333" opacity="0.7"/>
+                            <circle cx="240" cy="110" r="6" fill="#ffcccc" stroke="#333" opacity="0.7"/>
+                            <text x="225" y="155" font-size="12" text-anchor="middle">Gas</text>
+                        </g>
+                        
+                        <!-- Contoh -->
+                        <text x="80" y="175" font-size="10" text-anchor="middle">Kapor barus</text>
+                        <text x="225" y="175" font-size="10" text-anchor="middle">Uap</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#666"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 17 -->
+            <div class="topic" id="topic17">
+                <h3 class="topic-title">
+                    <i class="fas fa-wave-square"></i>
+                    17. Periode Gelombang
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Frekuensi 50 Hz<br>
+                    <strong>Ditanyakan:</strong> periode T = ... s  
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 0,02 s  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus periode: <code>T = 1 / f</code></li>
+                        <li>Substitusi nilai: <code>T = 1 / 50</code></li>
+                        <li>Hasil perhitungan: <code>T = 0,02 s</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    T = 1 / f<br>
+                    T = 1 / 50 = 0,02 s
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="350" height="180" viewBox="0 0 350 180">
+                        <!-- Gelombang sinusoidal -->
+                        <path d="M20 90 Q50 50 80 90 T140 90 T200 90 T260 90 T320 90" fill="none" stroke="#004d00" stroke-width="2"/>
+                        
+                        <!-- Satu periode -->
+                        <line x1="20" y1="110" x2="140" y2="110" stroke="#e00" stroke-width="2" marker-start="url(#start)" marker-end="url(#end)"/>
+                        <text x="80" y="125" font-size="12" text-anchor="middle" fill="#e00">1 Periode (T)</text>
+                        
+                        <!-- Garis vertikal untuk menandai awal dan akhir periode -->
+                        <line x1="20" y1="85" x2="20" y2="95" stroke="#666" stroke-width="1"/>
+                        <line x1="140" y1="85" x2="140" y2="95" stroke="#666" stroke-width="1"/>
+                        
+                        <!-- Frekuensi -->
+                        <text x="30" y="70" font-size="11" fill="#0066cc">f = 50 Hz</text>
+                        
+                        <!-- Waktu periode -->
+                        <text x="80" y="145" font-size="11" text-anchor="middle" fill="#e00">T = 0,02 s</text>
+                        
+                        <defs>
+                            <marker id="start" markerWidth="5" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M5 0 L5 5 L0 2.5 Z" fill="#e00"/></marker>
+                            <marker id="end" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 Z" fill="#e00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 18 -->
+            <div class="topic" id="topic18">
+                <h3 class="topic-title">
+                    <i class="fas fa-lightbulb"></i>
+                    18. Kecepatan Cahaya di Kaca
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> indeks bias kaca n = 1,5<br>
+                    <strong>Ditanyakan:</strong> v = ... m/s  
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> B. 2 × 10⁸ m/s  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus indeks bias: <code>n = c / v</code></li>
+                        <li>Dari rumus tersebut, kita peroleh: <code>v = c / n</code></li>
+                        <li>Diketahui: <code>c = 3 × 10⁸ m/s</code> (kecepatan cahaya di ruang hampa)</li>
+                        <li>Substitusi nilai: <code>v = (3 × 10⁸) / 1,5</code></li>
+                        <li>Hasil perhitungan: <code>v = 2 × 10⁸ m/s</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    n = c / v<br>
+                    v = c / n<br>
+                    v = (3 × 10⁸) / 1,5 = 2 × 10⁸ m/s
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="350" height="200" viewBox="0 0 350 200">
+                        <!-- Udara/vakum -->
+                        <rect x="40" y="60" width="100" height="80" fill="#f0f8ff" stroke="#004d00" stroke-width="1"/>
+                        <text x="90" y="105" font-size="12" text-anchor="middle">Udara</text>
+                        <text x="90" y="155" font-size="10" text-anchor="middle">n = 1</text>
+                        
+                        <!-- Kaca -->
+                        <rect x="210" y="60" width="100" height="80" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        <text x="260" y="105" font-size="12" text-anchor="middle">Kaca</text>
+                        <text x="260" y="155" font-size="10" text-anchor="middle">n = 1,5</text>
+                        
+                        <!-- Sinar cahaya di udara -->
+                        <path d="M60 100 L140 100" stroke="#ffcc00" stroke-width="3" marker-end="url(#arrow)"/>
+                        <text x="100" y="95" font-size="11" text-anchor="middle" fill="#ffcc00">c = 3×10⁸ m/s</text>
+                        
+                        <!-- Sinar cahaya di kaca -->
+                        <path d="M210 100 L290 100" stroke="#ffcc00" stroke-width="2" marker-end="url(#arrow2)"/>
+                        <text x="250" y="95" font-size="11" text-anchor="middle" fill="#ffcc00">v = 2×10⁸ m/s</text>
+                        
+                        <!-- Pembiasan -->
+                        <path d="M140 100 L210 100" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#ffcc00"/></marker>
+                            <marker id="arrow2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#ffcc00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 19 -->
+            <div class="topic" id="topic19">
+                <h3 class="topic-title">
+                    <i class="fas fa-temperature-high"></i>
+                    19. Konversi Suhu Celsius → Kelvin
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> 27 °C<br>
+                    <strong>Ditanyakan:</strong> ... K
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 300  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus konversi suhu: <code>K = °C + 273</code></li>
+                        <li>Substitusi nilai: <code>K = 27 + 273</code></li>
+                        <li>Hasil perhitungan: <code>K = 300 K</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    K = °C + 273<br>
+                    K = 27 + 273 = 300 K
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="200" viewBox="0 0 300 200">
+                        <!-- Termometer Celsius -->
+                        <rect x="50" y="60" width="40" height="100" fill="#ffcccc" stroke="#333" stroke-width="2"/>
+                        <rect x="50" y="60" width="40" height="20" fill="#ff9999" stroke="#333"/>
+                        <circle cx="70" cy="170" r="15" fill="#ff9999" stroke="#333"/>
+                        <text x="70" y="175" font-size="10" text-anchor="middle">°C</text>
+                        <text x="70" y="50" font-size="14" text-anchor="middle">27°C</text>
+                        
+                        <!-- Panah konversi -->
+                        <path d="M90 110 L210 110" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+                        <text x="150" y="105" font-size="11" text-anchor="middle">+ 273</text>
+                        
+                        <!-- Termometer Kelvin -->
+                        <rect x="210" y="60" width="40" height="100" fill="#cce7ff" stroke="#333" stroke-width="2"/>
+                        <rect x="210" y="60" width="40" height="20" fill="#99ccff" stroke="#333"/>
+                        <circle cx="230" cy="170" r="15" fill="#99ccff" stroke="#333"/>
+                        <text x="230" y="175" font-size="10" text-anchor="middle">K</text>
+                        <text x="230" y="50" font-size="14" text-anchor="middle">300 K</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#666"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 20 -->
+            <div class="topic" id="topic20">
+                <h3 class="topic-title">
+                    <i class="fas fa-tachometer-alt"></i>
+                    20. GLBB - Percepatan
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> v₀ = 0, v = 20 m/s, t = 5 s<br>
+                    <strong>Ditanyakan:</strong> a = ...  
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> C. 4 m/s²  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus percepatan: <code>a = (v - v₀) / t</code></li>
+                        <li>Substitusi nilai: <code>a = (20 - 0) / 5</code></li>
+                        <li>Hasil perhitungan: <code>a = 20 / 5 = 4 m/s²</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    a = (v - v₀) / t<br>
+                    a = (20 - 0) / 5<br>
+                    a = 20 / 5 = 4 m/s²
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="350" height="180" viewBox="0 0 350 180">
+                        <!-- Jalan -->
+                        <rect x="0" y="130" width="350" height="50" fill="#d2b48c" stroke="#8b4513"/>
+                        
+                        <!-- Mobil pada posisi awal -->
+                        <rect x="40" y="100" width="40" height="30" fill="#ff9999" stroke="#333"/>
+                        <circle cx="50" cy="130" r="5" fill="#333"/>
+                        <circle cx="70" cy="130" r="5" fill="#333"/>
+                        <text x="60" y="115" font-size="10" text-anchor="middle">v₀ = 0</text>
+                        
+                        <!-- Mobil pada posisi akhir -->
+                        <rect x="270" y="100" width="40" height="30" fill="#ff9999" stroke="#333"/>
+                        <circle cx="280" cy="130" r="5" fill="#333"/>
+                        <circle cx="300" cy="130" r="5" fill="#333"/>
+                        <text x="290" y="115" font-size="10" text-anchor="middle">v = 20 m/s</text>
+                        
+                        <!-- Lintasan gerak -->
+                        <path d="M80 115 L270 115" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+                        
+                        <!-- Waktu -->
+                        <text x="175" y="105" font-size="11" text-anchor="middle">t = 5 s</text>
+                        
+                        <!-- Percepatan -->
+                        <path d="M100 115 L130 115" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        <path d="M130 115 L160 115" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        <path d="M160 115 L190 115" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        <path d="M190 115 L220 115" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        <path d="M220 115 L250 115" stroke="#e00" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <text x="175" y="90" font-size="12" text-anchor="middle" fill="#e00">a = 4 m/s²</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#e00"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 21 -->
+            <div class="topic" id="topic21">
+                <h3 class="topic-title">
+                    <i class="fas fa-bolt"></i>
+                    21. Energi Kinetik
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> m = 3 kg, v = 4 m/s<br>
+                    <strong>Ditanyakan:</strong> E_k = ...  
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> C. 24 J  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus energi kinetik: <code>E_k = ½ m v²</code></li>
+                        <li>Substitusi nilai: <code>E_k = ½ × 3 × 4²</code></li>
+                        <li>Hitung kuadrat terlebih dahulu: <code>4² = 16</code></li>
+                        <li>Lanjutkan perhitungan: <code>E_k = ½ × 3 × 16</code></li>
+                        <li>Hasil perhitungan: <code>E_k = 1,5 × 16 = 24 J</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    E_k = ½ m v²<br>
+                    E_k = ½ × 3 × 4²<br>
+                    E_k = ½ × 3 × 16<br>
+                    E_k = 1,5 × 16 = 24 J
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="300" height="180" viewBox="0 0 300 180">
+                        <!-- Benda bergerak -->
+                        <circle cx="80" cy="100" r="20" fill="#ffcc99" stroke="#333" stroke-width="2"/>
+                        <text x="80" y="105" font-size="12" text-anchor="middle">m = 3 kg</text>
+                        
+                        <!-- Kecepatan -->
+                        <path d="M100 100 L140 100" stroke="#0066cc" stroke-width="3" marker-end="url(#arrow)"/>
+                        <text x="120" y="95" font-size="11" text-anchor="middle" fill="#0066cc">v = 4 m/s</text>
+                        
+                        <!-- Energi kinetik -->
+                        <g transform="translate(200, 100)">
+                            <!-- Lingkaran energi -->
+                            <circle cx="0" cy="0" r="30" fill="none" stroke="#e00" stroke-width="2" stroke-dasharray="5,3"/>
+                            
+                            <!-- Simbol energi -->
+                            <path d="M-15 0 L-5 -10 L5 0 L-5 10 Z" fill="#e00"/>
+                            <path d="M5 0 L15 -10 L25 0 L15 10 Z" fill="#e00"/>
+                            
+                            <text x="0" y="50" font-size="12" text-anchor="middle" fill="#e00">E_k = 24 J</text>
+                        </g>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#0066cc"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 22 -->
+            <div class="topic" id="topic22">
+                <h3 class="topic-title">
+                    <i class="fas fa-globe"></i>
+                    22. Hukum Gravitasi Newton
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Hubungan gaya gravitasi antara dua benda<br>
+                    <strong>Ditanyakan:</strong> Gaya gravitasi berbanding langsung dengan ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> B. massa  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Hukum gravitasi Newton: <code>F = G × (m₁ × m₂) / r²</code></li>
+                        <li>Dari rumus tersebut, gaya gravitasi (F) berbanding lurus dengan massa benda pertama (m₁) dan massa benda kedua (m₂): <code>F ∝ m₁ m₂</code></li>
+                        <li>Jika jarak (r) tetap, maka gaya gravitasi akan naik dua kali lipat jika massa salah satu benda dinaikkan dua kali lipat.</li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    F = G × (m₁ × m₂) / r²<br>
+                    F ∝ m₁ m₂
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="350" height="200" viewBox="0 0 350 200">
+                        <!-- Benda 1 -->
+                        <circle cx="100" cy="100" r="30" fill="#cce7ff" stroke="#004d00" stroke-width="2"/>
+                        <text x="100" y="105" font-size="12" text-anchor="middle">m₁</text>
+                        
+                        <!-- Benda 2 -->
+                        <circle cx="250" cy="100" r="30" fill="#ffcccc" stroke="#d00" stroke-width="2"/>
+                        <text x="250" y="105" font-size="12" text-anchor="middle">m₂</text>
+                        
+                        <!-- Gaya gravitasi -->
+                        <path d="M130 100 L220 100" stroke="#333" stroke-width="2"/>
+                        <path d="M130 100 L150 90" stroke="#333" stroke-width="1"/>
+                        <path d="M220 100 L200 90" stroke="#333" stroke-width="1"/>
+                        <text x="175" y="90" font-size="11" text-anchor="middle">F</text>
+                        
+                        <!-- Jarak -->
+                        <line x1="100" y1="140" x2="250" y2="140" stroke="#666" stroke-width="1" stroke-dasharray="3,3"/>
+                        <text x="175" y="155" font-size="11" text-anchor="middle" fill="#666">r</text>
+                        
+                        <!-- Perbandingan massa -->
+                        <g transform="translate(50, 30)">
+                            <text x="0" y="0" font-size="11" fill="#004d00">Jika m₁ → 2m₁</text>
+                            <text x="0" y="15" font-size="11" fill="#004d00">maka F → 2F</text>
+                        </g>
+                        
+                        <g transform="translate(200, 30)">
+                            <text x="0" y="0" font-size="11" fill="#d00">Jika m₂ → 2m₂</text>
+                            <text x="0" y="15" font-size="11" fill="#d00">maka F → 2F</text>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 23 -->
+            <div class="topic" id="topic23">
+                <h3 class="topic-title">
+                    <i class="fas fa-bolt"></i>
+                    23. Transformator Step-Down
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> N_p = 100, V_p = 220 V, V_s = 22 V<br>
+                    <strong>Ditanyakan:</strong> N_s = ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 10  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus transformator: <code>N_s / N_p = V_s / V_p</code></li>
+                        <li>Dari rumus tersebut, kita peroleh: <code>N_s = N_p × (V_s / V_p)</code></li>
+                        <li>Substitusi nilai: <code>N_s = 100 × (22 / 220)</code></li>
+                        <li>Hitung rasio: <code>22 / 220 = 1/10 = 0,1</code></li>
+                        <li>Hasil perhitungan: <code>N_s = 100 × 0,1 = 10 lilitan</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    N_s / N_p = V_s / V_p<br>
+                    N_s = N_p × (V_s / V_p)<br>
+                    N_s = 100 × (22 / 220)<br>
+                    N_s = 100 × 0,1 = 10 lilitan
+                </div>
+                
+               
+            </div>
+
+            <!-- Topic 24 -->
+            <div class="topic" id="topic24">
+                <h3 class="topic-title">
+                    <i class="fas fa-sun"></i>
+                    24. Gelombang Infra Merah
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> Gelombang elektromagnetik untuk foto-terapi<br>
+                    <strong>Ditanyakan:</strong> Jenis gelombang yang digunakan adalah ...
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> C. infra merah  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Gelombang infra merah memiliki panjang gelombang antara 700 nm – 1 mm.</li>
+                        <li>Sifat infra merah: menghasilkan panas, digunakan untuk penghangat jaringan dalam terapi.</li>
+                    </ol>
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="350" height="200" viewBox="0 0 350 200">
+                        <!-- Spektrum elektromagnetik -->
+                        <rect x="40" y="80" width="270" height="40" fill="none" stroke="#333" stroke-width="1"/>
+                        
+                        <!-- Bagian spektrum -->
+                        <rect x="40" y="80" width="45" height="40" fill="#9400d3" opacity="0.7"/>
+                        <text x="62" y="105" font-size="9" text-anchor="middle">UV</text>
+                        
+                        <rect x="85" y="80" width="45" height="40" fill="#4b0082" opacity="0.7"/>
+                        <text x="107" y="105" font-size="9" text-anchor="middle">Cahaya</text>
+                        
+                        <rect x="130" y="80" width="90" height="40" fill="#ff0000" opacity="0.7"/>
+                        <text x="175" y="105" font-size="9" text-anchor="middle">Infra Merah</text>
+                        
+                        <rect x="220" y="80" width="45" height="40" fill="#ff8c00" opacity="0.7"/>
+                        <text x="242" y="105" font-size="9" text-anchor="middle">Mikro</text>
+                        
+                        <rect x="265" y="80" width="45" height="40" fill="#0000ff" opacity="0.7"/>
+                        <text x="287" y="105" font-size="9" text-anchor="middle">Radio</text>
+                        
+                        <!-- Sinar infra merah -->
+                        <g transform="translate(175, 40)">
+                            <path d="M-20 0 L-10 -8 L0 0 L-10 8 Z" fill="#ff0000"/>
+                            <path d="M0 0 L10 -8 L20 0 L10 8 Z" fill="#ff0000"/>
+                            <path d="M-30 10 L-20 2 L-10 10 L-20 18 Z" fill="#ff0000"/>
+                            <path d="M10 10 L20 2 L30 10 L20 18 Z" fill="#ff0000"/>
+                        </g>
+                        
+                        <!-- Panah ke infra merah -->
+                        <path d="M175 70 L175 50" stroke="#ff0000" stroke-width="2" marker-end="url(#arrow)"/>
+                        
+                        <!-- Aplikasi -->
+                        <rect x="130" y="140" width="90" height="40" fill="#ffe6e6" stroke="#ff0000" stroke-width="1"/>
+                        <text x="175" y="165" font-size="11" text-anchor="middle">Foto-terapi</text>
+                        
+                        <defs>
+                            <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#ff0000"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Topic 25 -->
+            <div class="topic" id="topic25">
+                <h3 class="topic-title">
+                    <i class="fas fa-broadcast-tower"></i>
+                    25. Panjang Gelombang Radio
+                </h3>
+                
+                <div class="question">
+                    <strong>Diketahui:</strong> f = 100 MHz<br>
+                    <strong>Ditanyakan:</strong> λ = ... m
+                </div>
+                
+                <div class="answer">
+                    <strong>Jawaban:</strong> A. 3 m  
+                </div>
+                
+                <div class="step">
+                    <ol>
+                        <li>Rumus panjang gelombang: <code>λ = c / f</code></li>
+                        <li>Diketahui: <code>c = 3 × 10⁸ m/s</code> (kecepatan cahaya di ruang hampa)</li>
+                        <li>Konversi satuan frekuensi: <code>100 MHz = 100 × 10⁶ Hz = 10⁸ Hz</code></li>
+                        <li>Substitusi nilai: <code>λ = (3 × 10⁸) / (100 × 10⁶)</code></li>
+                        <li>Sederhanakan: <code>λ = (3 × 10⁸) / (10⁸) = 3 m</code></li>
+                    </ol>
+                </div>
+                
+                <div class="formula-box">
+                    λ = c / f<br>
+                    λ = (3 × 10⁸ m/s) / (100 × 10⁶ Hz)<br>
+                    λ = (3 × 10⁸) / (10⁸) = 3 m
+                </div>
+                
+                <div class="svg-container">
+                    <svg width="350" height="200" viewBox="0 0 350 200">
+                        <!-- Menara pemancar -->
+                        <rect x="40" y="80" width="20" height="80" fill="#999" stroke="#333"/>
+                        <rect x="30" y="70" width="40" height="15" fill="#666" stroke="#333"/>
+                        
+                        <!-- Antena -->
+                        <line x1="50" y1="70" x2="50" y2="50" stroke="#333" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="5" fill="#ff0000"/>
+                        
+                        <!-- Gelombang radio -->
+                        <g>
+                            <circle cx="50" cy="50" r="20" fill="none" stroke="#0066cc" stroke-width="1" opacity="0.7"/>
+                            <circle cx="50" cy="50" r="40" fill="none" stroke="#0066cc" stroke-width="1" opacity="0.6"/>
+                            <circle cx="50" cy="50" r="60" fill="none" stroke="#0066cc" stroke-width="1" opacity="0.5"/>
+                            <circle cx="50" cy="50" r="80" fill="none" stroke="#0066cc" stroke-width="1" opacity="0.4"/>
+                        </g>
+                        
+                        <!-- Panjang gelombang -->
+                        <line x1="50" y1="50" x2="130" y2="50" stroke="#0066cc" stroke-width="2" marker-start="url(#start)" marker-end="url(#end)"/>
+                        <text x="90" y="45" font-size="11" text-anchor="middle" fill="#0066cc">λ = 3 m</text>
+                        
+                        <!-- Frekuensi -->
+                        <text x="50" y="35" font-size="11" text-anchor="middle" fill="#ff0000">f = 100 MHz</text>
+                        
+                        <!-- Penerima -->
+                        <rect x="250" y="90" width="30" height="40" fill="#cce7ff" stroke="#333"/>
+                        <rect x="255" y="85" width="20" height="10" fill="#99ccff" stroke="#333"/>
+                        <text x="265" y="115" font-size="10" text-anchor="middle">Radio</text>
+                        
+                        <!-- Kecepatan cahaya -->
+                        <text x="175" y="170" font-size="11" text-anchor="middle" fill="#333">c = 3 × 10⁸ m/s</text>
+                        
+                        <defs>
+                            <marker id="start" markerWidth="5" markerHeight="5" refX="0" refY="2.5" orient="auto"><path d="M5 0 L5 5 L0 2.5 Z" fill="#0066cc"/></marker>
+                            <marker id="end" markerWidth="5" markerHeight="5" refX="5" refY="2.5" orient="auto"><path d="M0 0 L5 2.5 Z" fill="#0066cc"/></marker>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Final Tips -->
+            <div class="tips">
+                <i class="fas fa-graduation-cap"></i>
+                <div>
+                    <strong>Tips menyelesaikan soal OMI Fisika:</strong><br>
+                    1. Tulis besar & satuan setiap besaran.<br>
+                    2. Periksa kesesuaian masing masing satuan sebelum menghitung.<br>
+                    3. Gambar diagram bila ada gaya, arus, atau gelombang.
+                </div>
+            </div>
+        </main>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3 class="sidebar-title">
+                <i class="fas fa-list"></i>
+                Daftar Topik
+            </h3>
+            
+            <ul class="topic-list">
+                <li><a href="#topic1"><i class="fas fa-circle-notch"></i> Gerak Melingkar</a></li>
+                <li><a href="#topic2"><i class="fas fa-wave-square"></i> Gelombang Bunyi</a></li>
+                <li><a href="#topic3"><i class="fas fa-water"></i> Tekanan Hidrostatis</a></li>
+                <li><a href="#topic4"><i class="fas fa-bolt"></i> Transformator</a></li>
+                <li><a href="#topic5"><i class="fas fa-compress-arrows-alt"></i> Energi Pegas</a></li>
+                <li><a href="#topic6"><i class="fas fa-plug"></i> Hukum Ohm</a></li>
+                <li><a href="#topic7"><i class="fas fa-music"></i> Resonansi Kolom Udara</a></li>
+                <li><a href="#topic8"><i class="fas fa-eye"></i> Lensa Cembung</a></li>
+                <li><a href="#topic9"><i class="fas fa-bolt"></i> Arus dari Daya</a></li>
+                <li><a href="#topic10"><i class="fas fa-moon"></i> Gravitasi Bulan</a></li>
+                <li><a href="#topic11"><i class="fas fa-arrow-up"></i> Gerak Vertikal</a></li>
+                <li><a href="#topic12"><i class="fas fa-magnet"></i> Gaya Lorentz</a></li>
+                <li><a href="#topic13"><i class="fas fa-weight-hanging"></i> Konversi Massa Jenis</a></li>
+                <li><a href="#topic14"><i class="fas fa-hand-rock"></i> Usaha Gaya</a></li>
+                <li><a href="#topic16"><i class="fas fa-snowflake"></i> Sublimasi</a></li>
+                <li><a href="#topic17"><i class="fas fa-wave-square"></i> Periode Gelombang</a></li>
+                <li><a href="#topic18"><i class="fas fa-lightbulb"></i> Cahaya di Kaca</a></li>
+                <li><a href="#topic19"><i class="fas fa-temperature-high"></i> Konversi Suhu</a></li>
+                <li><a href="#topic20"><i class="fas fa-tachometer-alt"></i> Percepatan GLBB</a></li>
+                <li><a href="#topic21"><i class="fas fa-bolt"></i> Energi Kinetik</a></li>
+                <li><a href="#topic22"><i class="fas fa-globe"></i> Gravitasi Newton</a></li>
+                <li><a href="#topic23"><i class="fas fa-bolt"></i> Transformator Step-Down</a></li>
+                <li><a href="#topic24"><i class="fas fa-sun"></i> Gelombang Infra Merah</a></li>
+                <li><a href="#topic25"><i class="fas fa-broadcast-tower"></i> Panjang Gelombang Radio</a></li>
+            </ul>
+            
+            <div class="tips">
+                <i class="fas fa-info-circle"></i>
+                <div>
+                    Halaman ini dapat diunduh sebagai PDF untuk pembelajaran offline.
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+   <footer class="footer">
+    <p><em>Guru Pembimbing: Ahmad Zikrillah © <a href="https://ahmadzikrillah.github.io/Digital-Learning-IPA/penutup.html">Z-Digital Media</a> @2025</em></p>
+</footer>
+
+    <script>
+        // Simple script to add interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth scrolling for sidebar links
+            const sidebarLinks = document.querySelectorAll('.topic-list a');
+            
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Add active class to sidebar links based on scroll position
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('.topic');
+                const scrollPosition = window.scrollY + 150;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        sidebarLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
